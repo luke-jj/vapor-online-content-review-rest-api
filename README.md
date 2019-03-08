@@ -1,4 +1,6 @@
 # Online Review REST API (Vapor framework)
+A REST API that enables users to create/update/delete online reviews for
+online content and courses written in the Swift framework Vapor.
 
 ## Installation
 
@@ -39,6 +41,30 @@ If the wep app is meant to be run on a docker container, add the following line
 to the dockerfile to get the apt repo:
 
     RUN /bin/bash -c "$(wget -qO- https://apt.vapor.sh)"
+
+
+## API Endpoints
+
+    POST /api/courses       add new online content entity
+                            processes a json body with the properties:
+                            `name` and `url` of type String
+
+    GET /api/courses        response contains a json body of all stored online
+                            content entities
+
+    GET /api/courses/{id}   @param {id} integer that corresponds to the id value
+                            of a entity stored in the database
+                            reponse body contains json of the entity with the
+                            specified id.
+
+    PUT /api/courses/{id}   @param {id} integer that corresponds to the id value
+                            of a entity stored in the database
+                            reponse body contains json of the updated entity
+                            with the specified id.
+
+## Vapor Notes
+See [vapor notes](vapor-notes.md) for information about the vapor framework, and
+development notes.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/1342803/36623515-7293b4ec-18d3-11e8-85ab-4e2f8fb38fbd.png" width="320" alt="API Template">
