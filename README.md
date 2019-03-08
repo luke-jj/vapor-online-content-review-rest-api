@@ -62,6 +62,10 @@ to the dockerfile to get the apt repo:
                             reponse body contains json of the updated entity
                             with the specified id.
 
+    DELETE /api/courses/{id}    @param {id} integer that corresponds to the id
+                                value of a entity stored in the database
+                                Return '204 no content' status if successful
+
 ## Vapor Notes
 See [vapor notes](vapor-notes.md) for information about the vapor framework, and
 development notes.
