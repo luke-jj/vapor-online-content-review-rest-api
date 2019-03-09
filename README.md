@@ -66,6 +66,39 @@ to the dockerfile to get the apt repo:
                                 value of a entity stored in the database
                                 Return '204 no content' status if successful
 
+
+    POST /api/courses/{id}/reviews/
+    @param {id} integer that corresponds to the id value of a entity stored in
+    the database. Processes a json body with the properties `comment` and
+    `rating`.
+
+    GET /api/courses/{id}/reviews/
+    @param {id} integer that corresponds to the id value of a entity stored in
+    the database. response contains a json body of all stored reviews for a
+    given course.
+
+    GET /api/courses/{id}/reviews/{reviewId}
+    @param {id} integer that corresponds to the id value of a entity stored in
+    the database.
+    @param {reviewId} integer maps to a specific review for a course.
+    Response contains a json body of a specific review for a given course.
+
+    PUT /api/courses/{id}/reviews/{reviewsId}
+    @param {id} integer that corresponds to the id value of a entity stored in
+    the database.
+    @param {reviewId} integer maps to a specific review for a course.
+    response contains json of the updated review for a given course.
+
+    DELETE /api/courses/{id}/reviews/{reviewId}
+    @param {id} integer that corresponds to the id value of a entity stored in
+    the database.
+    @param {reviewId} integer maps to a specific review for a course.
+    Delete a specific review for a given course. Return '204 no content' status
+    if successful.
+
+
+
+
 ## Vapor Notes
 See [vapor notes](vapor-notes.md) for information about the vapor framework, and
 development notes.
