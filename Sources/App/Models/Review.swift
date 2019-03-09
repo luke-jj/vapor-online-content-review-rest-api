@@ -14,6 +14,20 @@ final class Review: Codable {
     }
 }
 
+// extensions for the FluentSQLite ORM
+// configure 'migrations' in the configure.swift' file
 extension Review: SQLiteModel {}
 extension Review: Migration {}
 
+// helper protocol that adds json decodation functionality
+extension Review: Content {}
+
+// provides a static property taht generates a url resource path component for
+// the provided data type.
+extension Review: Parameter {}
+
+/* extension Course: Model { */
+    /* typealias Database = SQLiteDatabase */
+    /* typealias ID = Int */
+    /* static var idKey IDKey = \Course.id */
+/* } */

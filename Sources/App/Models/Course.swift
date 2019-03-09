@@ -12,20 +12,19 @@ final class Course: Codable {
     }
 }
 
+extension Course {
+    var reviews: Children<Course, Review> {
+        return children(\.courseID)
+    }
+}
+
 // extensions for the FluentSQLite ORM
 // configure 'migrations' in the configure.swift' file
 extension Course: SQLiteModel {}
 extension Course: Migration {}
-
 // helper protocol that adds json decodation functionality
 extension Course: Content {}
-
 // provides a static property taht generates a url resource path component for
 // the provided data type.
 extension Course: Parameter {}
 
-/* extension Course: Model { */
-    /* typealias Database = SQLiteDatabase */
-    /* typealias ID = Int */
-    /* static var idKey IDKey = \Course.id */
-/* } */
